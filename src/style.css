@@ -20,6 +20,7 @@ a, a:visited {
     height: 50%;
     width: 100%;
     background: -webkit-linear-gradient(left, rgba(255, 255, 255, 1) 7%, rgba(255, 255, 255, .7) 16%, rgba(255, 255, 255, 0) 22%, rgba(255, 255, 255, 0) 78%, rgba(255, 255, 255, 1) 100%);
+    z-index: -1; /* make sure clickable things are on top of this mask */
 }
 
 #dial-wrapper {
