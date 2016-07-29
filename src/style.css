@@ -1,0 +1,56 @@
+body {
+    font-family: 'Roboto Slab', serif;
+    margin: 0;
+    overflow-x: hidden;
+}
+
+a, a:visited {
+    color: blue;
+    text-decoration: none;
+}
+
+#title {
+    font-size: 26px;
+    font-weight: bold;
+}
+#visualizer-mask {
+    left: 0px;
+    bottom: 0px;
+    position: absolute;
+    height: 50%;
+    width: 100%;
+    background: -webkit-linear-gradient(left, rgba(255, 255, 255, 1) 7%, rgba(255, 255, 255, .7) 16%, rgba(255, 255, 255, 0) 22%, rgba(255, 255, 255, 0) 78%, rgba(255, 255, 255, 1) 100%);
+}
+
+#dial-wrapper {
+    margin: 0 auto;
+    width: 650px; /* this is the width of the centered div, the sum of the left and right panes */
+    position: relative;
+    top: 50px;
+}
+
+#middle-text {
+    text-align: center;
+    position: relative;
+    left: 350px; /* this must be equal to the full width less the size of the dial */
+    top: 150px;
+    font-size: 78px;
+    line-height: 0;
+    width: 300px; /* this must be the width of the dial */
+}
+
+#left {
+    float: left;
+    width: 300px; /* this can be up to the full width less the size of the dial */
+}
+
+#dial-wrapper canvas {
+    float: right;
+}
+
+#visualizer {
+    z-index: -1; /* makes sure clickable things are on top of the visualizer */
+    left: 0px;
+    bottom: 0px;
+    position: absolute;
+}
