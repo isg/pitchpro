@@ -4,6 +4,15 @@ body {
     overflow-x: hidden;
 }
 
+#author {
+    position: absolute;
+    right: 0px;
+    top: 12px;
+    width: 120px;
+    font-size: 12px;
+    text-align: center;
+}
+
 a, a:visited {
     color: blue;
     text-decoration: none;
