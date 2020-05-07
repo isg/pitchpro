@@ -25,7 +25,7 @@ function frequency_from_note(note) {
 function cents_off_from_pitch(frequency, note) {
     return Math.floor(1200 * Math.log(frequency / frequency_from_note(note)) / Math.log(2));
 }
-var AudioManager = (function () {
+var AudioManager = /** @class */ (function () {
     function AudioManager() {
         var _this = this;
         // Sets stuff up.
@@ -186,7 +186,7 @@ var AudioManager = (function () {
     AudioManager.FFT_SIZE = Math.pow(2, 14);
     return AudioManager;
 }());
-var KnobUIManager = (function () {
+var KnobUIManager = /** @class */ (function () {
     function KnobUIManager() {
         this.middle_text = $("#middle-text");
         $("#dial").knob({
@@ -233,7 +233,7 @@ var KnobUIManager = (function () {
     };
     return KnobUIManager;
 }());
-var PianoRecordingManager = (function () {
+var PianoRecordingManager = /** @class */ (function () {
     function PianoRecordingManager() {
         this.audio_by_midi_note = {
             48: new Audio('piano/3C.ogg'),
@@ -275,7 +275,7 @@ var PianoRecordingManager = (function () {
     };
     return PianoRecordingManager;
 }());
-var PitchPro = (function () {
+var PitchPro = /** @class */ (function () {
     function PitchPro(ui_manager, recording_manager, audio_manager) {
         var _this = this;
         this.listening = false;
@@ -406,8 +406,14 @@ var PitchPro = (function () {
     return PitchPro;
 }());
 window.onload = function () {
-    var audio_manager = new AudioManager();
-    var recording_manager = new PianoRecordingManager();
+    var launchButton = document.getElementById('launch-button');
+    var intervalControl = document.getElementById('interval-control');
     var ui_manager = new KnobUIManager();
-    var pitch_pro = new PitchPro(ui_manager, recording_manager, audio_manager);
+    launchButton.addEventListener('click', function () {
+        launchButton.style.display = 'none';
+        intervalControl.style.display = null;
+        var audio_manager = new AudioManager();
+        var recording_manager = new PianoRecordingManager();
+        new PitchPro(ui_manager, recording_manager, audio_manager);
+    });
 };

@@ -24,27 +24,34 @@
         <br/><br/>
         Pitch matching and interval training.
         <br/><br/>
-        Select an interval, and then hit <i>spacebar</i>. After the tone, try to sing the selected interval. Any octave is valid.
-        <br/><br/>
-        Interval:
-        <select id="interval-selection">
-            <option value="0">unison</option>
-            <option value="1">minor second</option>
-            <option value="2">major second</option>
-            <option value="3">minor third</option>
-            <option value="4">major third</option>
-            <option value="5">perfect fourth</option>
-            <option value="6">tritone</option>
-            <option value="7">perfect fifth</option>
-            <option value="8">minor sixth</option>
-            <option value="9">major sixth</option>
-            <option value="10">minor seventh</option>
-            <option value="11">major seventh</option>
-        </select>
-        <br/><br/>
-        <span id="feedback">
-            
-        </span>  
+
+        <div id="launch-button">
+            <button>
+                Get Started
+            </button>
+        </div>
+        <div id="interval-control" style="display: none;">
+            Select an interval, and then hit <i>spacebar</i>. After the tone, try to sing the selected interval. Any octave is valid.
+            <br/><br/>
+            Interval:
+            <select id="interval-selection">
+                <option value="0">unison</option>
+                <option value="1">minor second</option>
+                <option value="2">major second</option>
+                <option value="3">minor third</option>
+                <option value="4">major third</option>
+                <option value="5">perfect fourth</option>
+                <option value="6">tritone</option>
+                <option value="7">perfect fifth</option>
+                <option value="8">minor sixth</option>
+                <option value="9">major sixth</option>
+                <option value="10">minor seventh</option>
+                <option value="11">major seventh</option>
+            </select>
+            <br /><br />
+            <span id="feedback"></span>
+        </div>
+
     </div>   
 
     <input id="dial" type="text" class="dial" />
