@@ -494,8 +494,16 @@ class PitchPro {
 
 }
 window.onload = function () {
-    let audio_manager = new AudioManager();
-    let recording_manager = new PianoRecordingManager();
+    const launchButton = document.getElementById('launch-button');
+    const intervalControl = document.getElementById('interval-control');
     let ui_manager = new KnobUIManager();
-    let pitch_pro = new PitchPro(ui_manager, recording_manager, audio_manager);
+
+    launchButton.addEventListener('click', () => {
+        launchButton.style.display = 'none';
+        intervalControl.style.display = null;
+
+        let audio_manager = new AudioManager();
+        let recording_manager = new PianoRecordingManager();
+        new PitchPro(ui_manager, recording_manager, audio_manager);
+    })
 }

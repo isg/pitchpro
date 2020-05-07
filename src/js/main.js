@@ -406,8 +406,14 @@ var PitchPro = /** @class */ (function () {
     return PitchPro;
 }());
 window.onload = function () {
-    var audio_manager = new AudioManager();
-    var recording_manager = new PianoRecordingManager();
+    var launchButton = document.getElementById('launch-button');
+    var intervalControl = document.getElementById('interval-control');
     var ui_manager = new KnobUIManager();
-    var pitch_pro = new PitchPro(ui_manager, recording_manager, audio_manager);
+    launchButton.addEventListener('click', function () {
+        launchButton.style.display = 'none';
+        intervalControl.style.display = null;
+        var audio_manager = new AudioManager();
+        var recording_manager = new PianoRecordingManager();
+        new PitchPro(ui_manager, recording_manager, audio_manager);
+    });
 };
