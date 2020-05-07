@@ -1,0 +1,23 @@
+{
+  "name": "pitchpro",
+  "version": "1.0.0",
+  "description": "In-browser pitch detection and interval training tool.",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc src/js/main.ts",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/isg/pitchpro.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/isg/pitchpro/issues"
+  },
+  "homepage": "https://github.com/isg/pitchpro#readme",
+  "devDependencies": {
+    "typescript": "^3.8.3"
+  }
+}
